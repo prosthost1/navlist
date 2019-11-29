@@ -12,7 +12,7 @@ body {
   display: block;
   clear: both;
 }
-h1 {
+h1, h2 {
   margin-top: 0;
   font: bold 24px Arial;
   color: #bfbfbf;
@@ -50,7 +50,7 @@ nav {
 .ins-submenu {
   position: absolute;
   width: 210px;
-  border-radius: 3px;
+  font-size: 0;
   transition: all 0.3s ease-in-out;
   transform: scaleY(0);
   transform-origin: 0 0;
@@ -68,11 +68,12 @@ nav {
   padding-right: 10px;
 }
 .submenu ul {
-    background-color: #d2d4d5;
+  background-color: #d2d4d5;
 }
 li {
   display: inline-block;
   position: relative;
+  font-size: 0;
   transition: all 0.2s ease;
 }
 .link {
@@ -164,6 +165,42 @@ li:hover .submenu {
   padding: 18px 30px;
   border-right: 1px solid #3f4852;
 }
-.third .link:last-child {
+.third li:last-child .link {
   border-right: none;
+}
+.third li:nth-child(3) .submenu {
+  width: 420px;
+}
+.third li:nth-child(3) .submenu ul {
+  display: inline-block;
+  width: 210px;
+}
+.third li:nth-child(3) .submenu ul:nth-child(2) {
+  vertical-align: top;
+}
+table {
+  width: 100%;  
+  border-collapse: collapse;
+}
+thead {
+  background-color: #2a3644;
+}
+th {
+  padding: 9px 25px;
+  border: 1px solid #3f4852;
+}
+tr:first-child th:first-child {
+  width: 5%;
+}
+tr:first-child th:nth-child(2) {
+  width: 48%;
+  text-align: left;
+}
+tr:first-child th:nth-child(3) {
+  padding: 18px 0;
+}
+th p {
+  margin: 0;
+  font: bold 16px "Arial";
+  color: #fff;
 }
