@@ -95,7 +95,7 @@ li:hover .link {
   top: 100%;
 }
 .submenu--last {
-  right: 10%;
+  right: 0;
 }
 li:hover .submenu {
   visibility: visible;
@@ -179,7 +179,8 @@ li:hover .submenu {
   vertical-align: top;
 }
 table {
-  width: 100%;  
+  width: 100%;
+  margin-bottom: 60px;  
   border-collapse: collapse;
 }
 thead {
@@ -190,17 +191,107 @@ th {
   border: 1px solid #3f4852;
 }
 tr:first-child th:first-child {
-  width: 5%;
+  width: 6%;
+  padding: 0;
 }
-tr:first-child th:nth-child(2) {
+tr:first-child th:nth-child(2),
+b:nth-child(2) {
   width: 48%;
   text-align: left;
 }
-tr:first-child th:nth-child(3) {
-  padding: 18px 0;
+tr:first-child th:nth-child(3),
+tr:nth-child(2) th {
+  padding: 11px 0;
 }
-th p {
+table p {
   margin: 0;
   font: bold 16px "Arial";
   color: #fff;
+}
+tbody tr {
+  border-top: 1px solid #c0c1c2;
+}
+tbody tr:hover td {
+  background-color: #c0c1c2;
+  cursor: pointer;
+}
+tbody tr:nth-child(even) {
+  background-color: #e8e8e8;
+}
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+td {
+  padding: 18px 14px;
+  border-right: 1px solid #c0c1c2; 
+  transition: all 0.1s ease;
+}
+td p {
+  text-align: center;
+  font: normal 16px Arial;
+  color: #2a3644;
+}
+td:last-child {
+  border-color: transparent;
+}
+td:nth-child(2) {
+  padding: 0 25px;
+}
+td:nth-child(2) p {
+  text-align: left;
+}
+.table {
+  display: table;
+  width: 100%;
+  border-radius: 3px;
+}
+.table p {
+  display: table-row;
+}
+.thead-row {
+  background-color: #2a3644;
+}
+b,
+i {
+  display: table-cell;
+  padding: 18px 0;
+}
+b {
+  text-align: center;
+  font: bold 16px "Arial";
+  color: #fff;
+  border-right: 1px solid #3f4852;
+}
+b:first-child {
+  width: 6%;
+  padding: 0;
+}
+b:nth-child(2),
+i:nth-child(2) {
+  padding-left: 23px;
+}
+i {
+  font: normal 16px Arial;
+  color: #2a3644;
+  border-top: 1px solid #c0c1c2;
+  border-right: 1px solid #c0c1c2;
+}
+i:first-child {
+  text-align: center;
+}
+i:nth-child(3),
+i:nth-child(4),
+i:nth-child(5) {
+  padding: 0 27px;
+  text-align: right;
+}
+.tbody-row:nth-child(odd) {
+  background-color: #e8e8e8;
+}
+.tbody-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.tbody-row:hover i {
+  background-color: #c0c1c2;
+  cursor: pointer;
 }
