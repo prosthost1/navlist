@@ -75,9 +75,6 @@ nav {
 .ins-submenu--last {
   padding-right: 10px;
 }
-.submenu ul {
-  background-color: #d2d4d5;
-}
 li {
   position: relative;
   transition: all 0.2s ease;
@@ -92,12 +89,21 @@ li {
   color: #fff;
 }
 .first .link {
-  padding: 18px 32px;
+  padding: 16px 32px;
   border-right: 1px solid #3f4852;
   border-left: 1px solid #3f4852;
 }
 .link:hover {
   background-color: #3f4852;
+}
+.first>li:first-child a,
+.second>li:first-child a,
+.third>li:first-child a {
+  border-radius: 3px 0 0 3px;
+}
+.first>li:last-child a,
+.second>li:last-child a {
+  border-radius: 0 3px 3px 0;
 }
 li:hover .link {
   color: #fd8612;
@@ -114,9 +120,21 @@ li:hover .submenu {
   display: block;
   border-bottom: 1px solid #3f4852;
 }
-.submenu a:hover {
+.submenu li:hover>a {
   color: #fd8612;
   background-color: #2a3644;
+}
+.submenu li:first-child a,
+.submenu .ins-submenu li:first-child a {
+  border-radius: 3px 3px 0 0;
+}
+.submenu>ul>li:last-child a,
+.ins-submenu>ul>li:last-child>a {
+  border-radius: 0 0 3px 3px;
+}
+.ins-submenu--last li:nth-child(2),
+.ins-submenu--last li:nth-child(3) {
+  border-radius: none;
 }
 .submenu li:last-child {
   border-bottom: none;
@@ -125,6 +143,7 @@ li:hover .submenu {
 .ins-submenu a {
   display: block;
   padding: 15px 20px;
+  background-color: #d2d4d5;
   color: #2a3644;
   font: bold 15px Arial;
 }
@@ -135,11 +154,11 @@ li:hover .submenu {
   display: table-cell;
 }
 .second .link {
-  padding: 18px 0;
+  padding: 15px 0;
   text-align: center;
   border-left: 1px solid #3f4852;
 }
-.second > li:hover {
+.second > li > a:hover {
   background-color: #3f4852;
 }
 .ins-submenu--first {
@@ -161,11 +180,29 @@ li:hover .submenu {
   transform: scaleY(1);
 }
 .third {
+  padding-right: 30px;
   background-color: #2a3644;
 }
 .third .link {
-  padding: 18px 30px;
+  padding: 16px 30px;
   border-right: 1px solid #3f4852;
+}
+.third>li:first-child a {
+  position: relative;
+  padding-left: 60px;
+}
+.third>li:first-child a:before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 16px;
+  left: 30px;
+  background-image: url(../images/sprite.png);
+  background-position: -16px 0;
+  transition: all 0.2s ease;
+}
+.third>li:first-child a:hover:before {
+  background-position: -16px -15px;
 }
 .third li:last-child .link,
 .second li:last-child .link,
@@ -186,6 +223,19 @@ li:hover .submenu {
 }
 .double ul:first-child {
   border-right: 1px solid #3f4852;
+  border-radius: 3px 0 0 3px;
+}
+.double ul:first-child li:first-child a {
+  border-radius: 3px 0 0 0;
+}
+.double ul:first-child li:last-child a {
+  border-radius: 0 0 0 3px;
+}
+.double ul:last-child li:first-child a {
+  border-radius: 0 3px 0 0;
+}
+.double ul:last-child li:last-child a {
+  border-radius: 0;
 }
 .double ul:last-child li:last-child {
   border-bottom: 1px solid #3f4852;
@@ -195,20 +245,48 @@ li:hover .submenu {
   background-color: #d2d4d5;
   border-radius: 3px;
 }
-.social {
+.social,
+.social li {
   float: right;
 }
-.social a {
-  position: relative;
+.social {
+  padding-top: 14px;
 }
-.fb:before {
-  content: "";
-  position: absolute;
-  background: url(../images/sprite.png) no-repeat ;
-  width: 20px;
-  height: 20px;
-  left: -50px;
+.social li:first-child {
+  padding-top: 2px;
+}
+.social li:nth-child(2) {
+  padding-top: 3px;
+  padding-left: 3px;
+}
+.social a {
+  display: block;
+  margin: 0 12px;
+  background-image: url(../images/sprite.png);
+}
+.fb {
+  width: 8px;
+  height: 17px;
+  background-position: -34px 0;
+}
+.fb:hover {
+  background-position: -34px 17px;
+}
+.tw {
+  width: 16px;
+  height: 14px;
+  background-position: -45px 0;
+}
+.tw:hover {
+  background-position: -45px 22px;
+}
+.in {
+  width: 14px;
+  height: 15px;
   background-position: 0 0;
+}
+.in:hover {
+  background-position: 0px 20px;
 }
 table {
   width: 100%;
