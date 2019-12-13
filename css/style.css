@@ -96,9 +96,9 @@ li {
 .link:hover {
   background-color: #3f4852;
 }
-.first>li:first-child a,
-.second>li:first-child a,
-.third>li:first-child a {
+.first>li:first-child>a,
+.second>li:first-child>a,
+.third>li:first-child>a {
   border-radius: 3px 0 0 3px;
 }
 .first>li:last-child a,
