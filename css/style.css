@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding: 0;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 .wrapper {
@@ -13,7 +12,8 @@ body {
   display: block;
   clear: both;
 }
-h1, h2 {
+h1,
+h2 {
   margin-top: 0;
   font: bold 24px Arial;
   color: #bfbfbf;
@@ -44,7 +44,6 @@ nav {
   border-radius: 3px;
 }
 .first {
-  font-size: 0;
   background-color: #2a3644;
   text-align: justify;
 }
@@ -57,7 +56,6 @@ nav {
 .ins-submenu {
   position: absolute;
   width: 210px;
-  font-size: 0;
   transition: all 0.3s ease-in-out;
   transform: scaleY(0);
   transform-origin: 0 0;
@@ -66,22 +64,22 @@ nav {
   z-index: 1;
 }
 .submenu {
-  padding: 10px 0 40px;
+  padding: 5px 0 40px;
   top: 100%;
 }
 .ins-submenu--first {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 .ins-submenu--last {
-  padding-right: 10px;
+  padding-right: 5px;
 }
 li {
   position: relative;
   transition: all 0.2s ease;
 }
-.first>li,
-.second>li,
-.third>li {
+.first > li,
+.second > li,
+.third > li {
   display: inline-block;
 }
 .link {
@@ -96,13 +94,16 @@ li {
 .link:hover {
   background-color: #3f4852;
 }
-.first>li:first-child>a,
-.second>li:first-child>a,
-.third>li:first-child>a {
+.first > li:first-child > a,
+.second > li:first-child > a,
+.third > li:first-child > a {
   border-radius: 3px 0 0 3px;
 }
-.first>li:last-child a,
-.second>li:last-child a {
+.village {
+  border-radius: 3px;
+}
+.first > li:last-child a,
+.second > li:last-child a {
   border-radius: 0 3px 3px 0;
 }
 li:hover .link {
@@ -117,10 +118,12 @@ li:hover .submenu {
   transform: scaleY(1);
 }
 .submenu li {
-  display: block;
   border-bottom: 1px solid #3f4852;
 }
-.submenu li:hover>a {
+.submenu li:last-child {
+  border-bottom: none;
+}
+.submenu li:hover > a {
   color: #fd8612;
   background-color: #2a3644;
 }
@@ -128,20 +131,12 @@ li:hover .submenu {
 .submenu .ins-submenu li:first-child a {
   border-radius: 3px 3px 0 0;
 }
-.submenu>ul>li:last-child a,
-.ins-submenu>ul>li:last-child>a {
+.submenu > ul > li:last-child a,
+.ins-submenu > ul > li:last-child > a {
   border-radius: 0 0 3px 3px;
-}
-.ins-submenu--last li:nth-child(2),
-.ins-submenu--last li:nth-child(3) {
-  border-radius: none;
-}
-.submenu li:last-child {
-  border-bottom: none;
 }
 .submenu a,
 .ins-submenu a {
-  display: block;
   padding: 15px 20px;
   background-color: #d2d4d5;
   color: #2a3644;
@@ -154,7 +149,7 @@ li:hover .submenu {
   display: table-cell;
 }
 .second .link {
-  padding: 15px 0;
+  padding: 15px 10px;
   text-align: center;
   border-left: 1px solid #3f4852;
 }
@@ -165,7 +160,8 @@ li:hover .submenu {
   left: 100%;
   top: 0;
 }
-.submenu li:hover .ins-submenu--first {
+.submenu li:hover .ins-submenu--first,
+.ins-submenu--first li:hover .ins-submenu--last {
   opacity: 1;
   visibility: visible;
   transform: scaleY(1);
@@ -174,35 +170,33 @@ li:hover .submenu {
   right: 100%;
   top: 0;
 }
-.ins-submenu--first li:hover .ins-submenu--last {
-  opacity: 1;
-  visibility: visible;
-  transform: scaleY(1);
-}
 .third {
   padding-right: 30px;
   background-color: #2a3644;
+}
+.third>ul:first-child {
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 .third .link {
   padding: 16px 30px;
   border-right: 1px solid #3f4852;
 }
-.third>li:first-child a {
+.third > li:first-child a {
   position: relative;
   padding-left: 60px;
-  
 }
-.third>li:first-child a:before {
-  content: '';
+.third > li:first-child a:before {
+  content: "";
   position: absolute;
   width: 15px;
   height: 16px;
   left: 30px;
-  background-image: url(../images/sprite.png);
-  background-position: -16px 0;
+  background: url(../images/sprite.png) -16px 0;
   transition: all 0.2s ease;
 }
-.third>li:first-child a:hover:before {
+.third > li:first-child a:hover:before {
   background-position: -16px -15px;
 }
 .third li:last-child .link,
@@ -219,24 +213,16 @@ li:hover .submenu {
   min-width: 420px;
 }
 .double ul {
-  width: 209px;
+  width: 210px;
   float: left;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+.third .double .background a {
+  border-radius: 0;
 }
 .double ul:first-child {
   border-right: 1px solid #3f4852;
-  border-radius: 3px 0 0 3px;
-}
-.double ul:first-child li:first-child a {
-  border-radius: 3px 0 0 0;
-}
-.double ul:first-child li:last-child a {
-  border-radius: 0 0 0 3px;
-}
-.double ul:last-child li:first-child a {
-  border-radius: 0 3px 0 0;
-}
-.double ul:last-child li:last-child a {
-  border-radius: 0;
 }
 .double ul:last-child li:last-child {
   border-bottom: 1px solid #3f4852;
@@ -245,13 +231,14 @@ li:hover .submenu {
   display: inline-block;
   background-color: #d2d4d5;
   border-radius: 3px;
+  overflow: hidden;
 }
 .social,
 .social li {
   float: right;
 }
 .social {
-  padding-top: 14px;
+  padding: 16px 0;
 }
 .social li:first-child {
   padding-top: 2px;
@@ -291,7 +278,7 @@ li:hover .submenu {
 }
 table {
   width: 100%;
-  margin-bottom: 60px;  
+  margin-bottom: 60px;
   border-collapse: collapse;
 }
 thead {
@@ -303,7 +290,6 @@ th {
 }
 tr:first-child th:first-child {
   width: 6%;
-  padding: 0;
 }
 tr:first-child th:nth-child(2),
 b:nth-child(2) {
@@ -312,10 +298,9 @@ b:nth-child(2) {
 }
 tr:first-child th:nth-child(3),
 tr:nth-child(2) th {
-  padding: 11px 0;
+  padding: 11px;
 }
-table p {
-  margin: 0;
+table th {
   font: bold 16px "Arial";
   color: #fff;
 }
@@ -334,21 +319,19 @@ tbody tr:nth-child(odd) {
 }
 td {
   padding: 18px 14px;
-  border-right: 1px solid #c0c1c2; 
-  transition: all 0.1s ease;
-}
-td p {
+  border-right: 1px solid #c0c1c2;
   text-align: center;
   font: normal 16px Arial;
   color: #2a3644;
+  transition: all 0.2s ease;
 }
 td:last-child {
   border-color: transparent;
 }
 td:nth-child(2) {
-  padding: 0 25px;
+  padding: 10px 25px;
 }
-td:nth-child(2) p {
+td:nth-child(2) {
   text-align: left;
 }
 .table {
@@ -365,27 +348,27 @@ td:nth-child(2) p {
 b,
 i {
   display: table-cell;
-  padding: 18px 0;
+  padding: 18px;
 }
 b {
   text-align: center;
-  font: bold 16px "Arial";
+  font-size: 16px;
   color: #fff;
   border-right: 1px solid #3f4852;
 }
 b:first-child {
   width: 6%;
-  padding: 0;
 }
 b:nth-child(2),
 i:nth-child(2) {
-  padding-left: 23px;
+  padding: 10px 23px;
 }
 i {
   font: normal 16px Arial;
   color: #2a3644;
   border-top: 1px solid #c0c1c2;
   border-right: 1px solid #c0c1c2;
+  transition: all 0.2s ease;
 }
 i:first-child {
   text-align: center;
@@ -393,7 +376,7 @@ i:first-child {
 i:nth-child(3),
 i:nth-child(4),
 i:nth-child(5) {
-  padding: 0 27px;
+  padding: 10px 27px;
   text-align: right;
 }
 .tbody-row:nth-child(odd) {
